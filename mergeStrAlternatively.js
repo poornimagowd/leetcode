@@ -23,22 +23,18 @@
  * @param {string} word2
  * @return {string}
  */
-var mergeAlternately = function(word1, word2) {
-    let i = 0, j = 0
-    let result = []
-    
-    while(i<word1.length || j<word2.length){
-        if(i<word1.length){
-            result.push(word1[i])
-            i++
-        }
 
-        if(j<word2.length){
-            result.push(word2[j])
-            j++
-        }
+//alertnate solution
+var mergeAlternately = function(word1,word2){
+    let answer = ''
+    let temp = word1.length > word2.length ? word1 : word2;
+    for(let i=0; i<temp.length; i++){
+        let first = word1[i] || ''
+        let second = word2[i] || ''
+        answer = answer + first + second
     }
+    return answer
 
-    return result.join('')
-    
-};
+}
+
+console.log(mergeAlternately('abcerd','pqr'))
